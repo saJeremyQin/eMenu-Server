@@ -14,7 +14,9 @@ const port = process.env.PORT || 5005;
 const DB_HOST = process.env.DB_HOST;
 
 const app = express();
-db.connect(DB_HOST);
+db.connect(DB_HOST)
+    .then(() => console.log('Database connected successfully'))
+    .catch((err) => console.error('Database connection error:', err));
 
 // Apollo Server setup
 const server = new ApolloServer({ 
@@ -45,4 +47,4 @@ server.start().then(() => {
 // -X POST \
 // -H "Content-Type: application/json" \
 // --data '{ "query": "{ dishes { id } }" }' \
-// https://e-menu-server.vercel.app/
+// https://e-menu-server.vercel.app/api
