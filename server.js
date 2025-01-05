@@ -45,4 +45,4 @@ server.start().then(() => {
 // -X POST \
 // -H "Content-Type: application/json" \
 // --data '{ "query": "{ dishes { id } }" }' \
-// https://whats-menu-server.vercel.app/api 
+// https://e-menu-server.vercel.app/
