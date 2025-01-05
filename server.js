@@ -14,9 +14,7 @@ const port = process.env.PORT || 5005;
 const DB_HOST = process.env.DB_HOST;
 
 const app = express();
-db.connect(DB_HOST)
-    .then(() => console.log('Database connected successfully'))
-    .catch((err) => console.error('Database connection error:', err));
+db.connect(DB_HOST);
 
 // Apollo Server setup
 const server = new ApolloServer({ 
