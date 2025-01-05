@@ -27,6 +27,10 @@ const server = new ApolloServer({
     }
 });
 
+app.get('/', (req, res) => {
+    res.send('Hi, This is the emenu server service');
+});
+
 // start is called first, then applyMiddleware is called inside the callback function
 server.start().then(() => {
     // Apply the Apollo GraphQL middleware and set the path to /api
