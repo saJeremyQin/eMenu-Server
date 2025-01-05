@@ -22,6 +22,7 @@ db.connect(DB_HOST)
 const server = new ApolloServer({ 
     typeDefs, 
     resolvers,
+    persistedQueries: false, // Disable persisted queries
     context: () => {
         // Add the db models to the context 
         return {models};
